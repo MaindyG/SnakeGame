@@ -55,6 +55,7 @@ body {
   border-radius: 5px;
   background: #293447;
   box-shadow: 0 20px 40px rgba(52, 87, 220, 0.2);
+  display: none;
 }
 .game-details {
   color: #B8C6DC;
