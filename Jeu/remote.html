@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChromeCast Controller</title>
-    <link rel="stylesheet" type="text/css" href="Remote.css">
+    <link rel="stylesheet" type="text/css" href="remote.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css"
         rel="stylesheet">
 </head>
 
 <body>
 
-    <div class="wrapper">
+    <div class="wrapper" id="gameplay">
         <div class="game-details">
             <span class="score">Score: 0</span>
             <span class="high-score">High Score: 0</span>
@@ -37,7 +37,7 @@
                 <br><br>
 
                 <div class="up">
-                    <button id="playBtn" class= "controller-button" data-direction="up"><i
+                    <button id="btn" class= "controller-button" data-direction="up"><i
                             class="bi bi-arrow-up-square-fill fa-3x"></i></button>
                 </div>
 
@@ -46,7 +46,7 @@
                         <button class="controller-button" data-direction="left"><i class="bi bi-arrow-left-square-fill fa-3x"></i> </button>
                     </div>
                     <div class="centered">
-                        <button id="playBtn" class="rewind-back-CSS" onclick="pause()"><i class="bi bi-play-circle-fill fa-3x">
+                        <button id="playBtn" class="rewind-back-CSS" onclick="affichage()"><i class="bi bi-play-circle-fill fa-3x">
                             </i></button>
                     </div>
                     <div id="right">
@@ -81,8 +81,13 @@
         function info() {
             alert(" Classic Snake Game \n Veuillez presser ▶️ pour demarrer la partie \n\n ⬆️: Monter     ⬇️: Descendre     ⬅️: Gauche     ➡️: Droite     ");
         }
-        function pause(){
-            alert("pause")
+        function affichage(){
+            var game = document.getElementById("gameplay");
+            if (game.style.display === "none") {
+                game.style.display = "block";
+            } else {
+                game.style.display = "none";
+            }
         }
     </script> 
 
