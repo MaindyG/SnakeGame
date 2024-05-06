@@ -81,14 +81,26 @@
         function info() {
             alert(" Classic Snake Game \n Veuillez presser ▶️ pour demarrer la partie \n\n ⬆️: Monter     ⬇️: Descendre     ⬅️: Gauche     ➡️: Droite     ");
         }
-        function affichage(){
-            var game = document.getElementById("gameplay");
-            if (game.style.display === "none") {
-                game.style.display = "block";
-            } else {
-                game.style.display = "none";
-            }
+     
+
+function affichage() {
+    var game = document.getElementById("gameplay");
+    if (game.style.display === "none") {
+        game.style.display = "block";
+        if (!gameRunning) {
+            initGame(); // Start the game if it's not already running
+            setIntervalId = setInterval(initGame, 120);
+            gameRunning = true;
         }
+    } else {
+        game.style.display = "none";
+        clearInterval(setIntervalId); // Stop the game completely
+        setIntervalId = null;
+        gameRunning = false;
+    }
+}
+
+
     </script> 
 
 </body>

@@ -49,6 +49,11 @@ function updateFoodPosition(){
 
 
 function initGame(){
+    var game = document.getElementById("gameplay");
+    if (game.style.display === "none") {
+        return;
+         
+    }
     if (gameOver) return handleGameOver();
     let html = `<div class="food" style="grid-area: ${foodY} / ${foodX}"></div>`;
 

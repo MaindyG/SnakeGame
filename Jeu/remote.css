@@ -35,7 +35,7 @@ button {
 }
 
 button:hover {
-    background-color: #ffe203;
+    background-color: yellow;
 }
 
 body {
@@ -53,12 +53,12 @@ body {
   flex-direction: column;
   justify-content: center;
   border-radius: 5px;
-  background: #293447;
-  box-shadow: 0 20px 40px rgba(52, 87, 220, 0.2);
+  background: #272726;
+  box-shadow: 0 20px 40px rgba(0, 2, 10, 0.2);
   display: none;
 }
 .game-details {
-  color: #B8C6DC;
+  color: #c9daf6;
   font-weight: 500;
   font-size: 1.2rem;
   padding: 20px 27px;
@@ -69,14 +69,14 @@ body {
   height: 100%;
   width: 100%;
   display: grid;
-  background: #212837;
+  background: #000000;
   grid-template: repeat(30, 1fr) / repeat(30, 1fr);
 }
 .play-board .food {
-  background: #FF003D;
+  background: red;
 }
 .play-board .head {
-  background: #60CBFF;
+  background: #ffe203;
 }
 
 .controls {
