@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-
+console.log("Version 1.0");
 
 
 
@@ -18,7 +18,7 @@ document.getElementById('connectButton').addEventListener('click', () => {
 
 document.getElementById('playBtn').addEventListener('click', () => {
     if (currentSession) {
-        loadMedia("https://transfertco.ca/SnakeGame/Jeu/receiver.html");
+        loadMedia("http://127.0.0.1:5501/SnakeGame/Jeu/receiver.html");
     } else {
         alert('Connectez-vous sur chromecast en premier');
     }

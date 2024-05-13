@@ -1,3 +1,6 @@
+window.addEventListener("load", (event) => {
+    console.log("Snake v2.0");
+  });
 const context = cast.framework.CastReceiverContext.getInstance();
 const CHANNEL = 'urn:x-cast:snakeGame';
 context.addCustomMessageListener(CHANNEL, handleMessageFromSender);
