@@ -125,7 +125,7 @@ document.getElementById('connectButton').addEventListener('click', () => {
     initializeApiOnly();
 });
 
-document.getElementById('connectButton').addEventListener('click', () => {
+document.getElementById('playBtn').addEventListener('click', () => {
     if (currentSession) {
         loadMedia("https://transfertco.ca/SnakeGame/Jeu/receiver.html");
     } else {

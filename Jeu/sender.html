@@ -49,7 +49,8 @@
                         <button class="controller-button" data-direction="left"><i class="bi bi-arrow-left-square-fill fa-3x"></i> </button>
                     </div>
                     <div class="centered">
-                        <button id="playBtn" class="rewind-back-CSS" onclick="affichage()"><i class="bi bi-play-circle-fill fa-3x">
+                        <!-- onclick="affichage()" -->
+                        <button id="playBtn" class="rewind-back-CSS" ><i class="bi bi-play-circle-fill fa-3x">
                             </i></button>
                     </div>
                     <div id="right">
@@ -87,22 +88,22 @@
         }
      
 
-function affichage() {
-    var game = document.getElementById("gameplay");
-    if (game.style.display === "none") {
-        game.style.display = "block";
-        if (!gameRunning) {
-            initGame(); 
-            setIntervalId = setInterval(initGame, 120);
-            gameRunning = true;
-        }
-    } else {
-        game.style.display = "none";
-        clearInterval(setIntervalId); 
-        setIntervalId = null;
-        gameRunning = false;
-    }
-}
+// function affichage() {
+//     var game = document.getElementById("gameplay");
+//     if (game.style.display === "none") {
+//         game.style.display = "block";
+//         if (!gameRunning) {
+//             initGame(); 
+//             setIntervalId = setInterval(initGame, 120);
+//             gameRunning = true;
+//         }
+//     } else {
+//         game.style.display = "none";
+//         clearInterval(setIntervalId); 
+//         setIntervalId = null;
+//         gameRunning = false;
+//     }
+// }
 
 
     </script> 
