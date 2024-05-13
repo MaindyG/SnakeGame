@@ -43,8 +43,8 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #E3F2FD;
-}
+  background: rgb(45, 45, 45);
+  }
 .wrapper {
   width: 65vmin;
   height: 80vmin;
