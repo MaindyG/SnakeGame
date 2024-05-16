@@ -18,11 +18,13 @@ document.getElementById('connectButton').addEventListener('click', () => {
 
 document.getElementById('playBtn').addEventListener('click', () => {
     if (currentSession) {
-        loadMedia("http://127.0.0.1:5501/SnakeGame/Jeu/receiver.html");
+        // Load the receiver page on the Chromecast device
+        loadMedia("https://transfertco.ca/SnakeGame/Jeu/receiver.html");
     } else {
-        alert('Connectez-vous sur chromecast en premier');
+        alert('Connectez-vous sur Chromecast en premier');
     }
 });
+
 
 
 // document.getElementById('connectButton').addEventListener('click', () => {
@@ -84,16 +86,23 @@ function receiverListener(availability) {
     }
 }
 
-function loadMedia(gameUrl) {
-    const mediaInfo = new chrome.cast.media.MediaInfo(gameUrl);
-    const request = new chrome.cast.media.LoadRequest(mediaInfo);
-    const remotePlayer = new cast.framework.RemotePlayer();
-    const remotePlayerController = new cast.framework.RemotePlayerController(remotePlayer);
+// function loadMedia(gameUrl) {
+//     const mediaInfo = new chrome.cast.media.MediaInfo(gameUrl);
+//     const request = new chrome.cast.media.LoadRequest(mediaInfo);
+//     const remotePlayer = new cast.framework.RemotePlayer();
+//     const remotePlayerController = new cast.framework.RemotePlayerController(remotePlayer);
 
+//     currentSession.loadMedia(request, mediaSession => {
+//         console.log('Jeu chargé avec succès');
+//     }, onError);}
+function loadMedia(receiverUrl) {
+    const mediaInfo = new chrome.cast.media.MediaInfo(receiverUrl);
+    const request = new chrome.cast.media.LoadRequest(mediaInfo);
+    
     currentSession.loadMedia(request, mediaSession => {
-        console.log('Jeu chargé avec succès');
-        initializeSeekSlider(remotePlayerController, mediaSession);
-    }, onError);}
+        console.log('Receiver page loaded successfully');
+    }, onError);
+}
 
 
 function sendMessage(namespace, message) {
