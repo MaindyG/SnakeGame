@@ -1,5 +1,5 @@
 window.addEventListener("load", (event) => {
-    console.log("Snake v3.0");
+    console.log("Snake v4.0");
     const context = cast.framework.CastReceiverContext.getInstance();
     const CHANNEL = 'urn:x-cast:snakeGame';
     const applicationID = 'B46033B3'
