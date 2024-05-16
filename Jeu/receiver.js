@@ -8,7 +8,7 @@
     context.start(options);
 
 let snakeX = 5, snakeY = 5;
-let velocityX = 0, velocityY = 0;
+let vitesseX = 0, vitesseY = 0;
 let gameOver = false;
 let foodX, foodY;
 let snakeBody = [];
@@ -22,17 +22,17 @@ function handleMessageFromSender(event) {
 
 function handleControllerInput(direction) {
     if (direction === "up") {
-        velocityX = 0;
-        velocityY = -1;
+        vitesseX = 0;
+        vitesseY = -1;
     } else if (direction === "down") {
-        velocityX = 0;
-        velocityY = 1;
+        vitesseX = 0;
+        vitesseY = 1;
     } else if (direction === "left") {
-        velocityX = -1;
-        velocityY = 0;
+        vitesseX = -1;
+        vitesseY = 0;
     } else if (direction === "right") {
-        velocityX = 1;
-        velocityY = 0;
+        vitesseX = 1;
+        vitesseY = 0;
     }
 }
 document.addEventListener('keydown', (event) => {
@@ -78,8 +78,8 @@ function initGame() {
         highScoreElement.innerText = `High Score: ${score}`;
     }
 
-    snakeX += velocityX;
-    snakeY += velocityY;
+    snakeX += vitesseX;
+    snakeY += vitesseY;
 
     for (let i = snakeBody.length - 1; i > 0; i--) {
         snakeBody[i] = snakeBody[i - 1];
