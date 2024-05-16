@@ -6,10 +6,10 @@
     justify-content: center;
     background-color: #272726;
     padding: 3rem; 
-    max-width: 410px;
     margin: 0 auto;
     border-radius: 9px;
     margin-left: 100px;
+    max-width: 100%;
 }
 
 #connectButton,

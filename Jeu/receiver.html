@@ -51,7 +51,7 @@ button:hover {
 }
 
 body {
-
+display: flex;
 align-items: center;
 justify-content: center;
 min-height: 100vh;
@@ -118,6 +118,11 @@ border-right: 1px solid #171B26;
   padding: 15px 0;
   font-size: 1rem;
 }
+@media screen and (max-width: 1000px) {
+    .container {
+        max-width: 100%;
+    }
+}
 
 </style>
 
@@ -137,9 +142,7 @@ border-right: 1px solid #171B26;
 
     
 </body>
-<footer>
-    SnakeJS v2.0
-</footer>
+
 <script src="receiver.js" type="module"></script>
 <script type="text/javascript" src="https://www.gstatic.com/cast/sdk/libs/caf_receiver/v3/cast_receiver_framework.js"></script>
     <link rel="stylesheet"
