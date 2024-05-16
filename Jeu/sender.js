@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let currentSession;
     const CHANNEL = 'urn:x-cast:snakeGame'; 
-    const applicationID = 'B46033B3';
+    const applicationID = '925F4741';
 
     document.getElementById('connectButton').addEventListener('click', () => {
         initializeApiOnly();
