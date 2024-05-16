@@ -45,40 +45,7 @@ body {
   min-height: 100vh;
   background: rgb(45, 45, 45);
   }
-.wrapper {
-  width: 65vmin;
-  height: 80vmin;
-  display: flex;
-  overflow: hidden;
-  flex-direction: column;
-  justify-content: center;
-  border-radius: 5px;
-  background: #272726;
-  box-shadow: 0 20px 40px rgba(0, 2, 10, 0.2);
-  display: none; 
-}
 
-.game-details {
-  color: #c9daf6;
-  font-weight: 500;
-  font-size: 1.2rem;
-  padding: 20px 27px;
-  display: flex;
-  justify-content: space-between;
-}
-.play-board {
-  height: 100%;
-  width: 100%;
-  display: grid;
-  background: #000000;
-  grid-template: repeat(30, 1fr) / repeat(30, 1fr);
-}
-.play-board .food {
-  background: red;
-}
-.play-board .head {
-  background: #ffe203;
-}
 
 .controls {
   display: none;

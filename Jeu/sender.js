@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Version 3.0");
 
     let currentSession;
-    const CHANNEL = 'urn:x-cast:snakeGame'; // Channel name for communication
+    const CHANNEL = 'urn:x-cast:snakeGame'; 
     const applicationID = 'B46033B3';
 
     document.getElementById('connectButton').addEventListener('click', () => {
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function initializeApiOnly() {
-        const sessionRequest = new chrome.cast.SessionRequest(chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID);
+        const sessionRequest = new chrome.cast.SessionRequest(applicationID);
         const apiConfig = new chrome.cast.ApiConfig(sessionRequest, sessionListener, receiverListener);
         chrome.cast.initialize(apiConfig, onInitSuccess, onError);
     }
@@ -72,9 +72,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function sendControllerInput(direction) {
-        const message = { direction: direction };
-        const jsonMessage = JSON.stringify(message); // Convert message to JSON
-        sendMessage(CHANNEL, jsonMessage); // Sending message through the specified channel
+        let message = { direction: direction };
+        let jsonMessage = JSON.stringify(message); 
+        sendMessage(CHANNEL, jsonMessage); 
     }
 
 });
