@@ -6,7 +6,6 @@ window.addEventListener("load", (event) => {
     context.addCustomMessageListener(CHANNEL, handleMessageFromSender);
     const options = new cast.framework.CastReceiverOptions();
     context.start(options);
-});
 
 let snakeX = 5, snakeY = 5;
 let velocityX = 0, velocityY = 0;
