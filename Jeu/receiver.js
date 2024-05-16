@@ -36,6 +36,22 @@ function handleControllerInput(direction) {
         velocityY = 0;
     }
 }
+document.addEventListener('keydown', (event) => {
+    const key = event.key;
+    handleKeyPress(key);
+});
+function handleKeyPress(key) {
+    if (key === 'ArrowUp') {
+        handleControllerInput('up');
+    } else if (key === 'ArrowDown') {
+        handleControllerInput('down');
+    } else if (key === 'ArrowLeft') {
+        handleControllerInput('left');
+    } else if (key === 'ArrowRight') {
+        handleControllerInput('right');
+    }
+}
+
 
 function updateFoodPosition() {
     foodX = Math.floor(Math.random() * 30) + 1;
@@ -44,13 +60,12 @@ function updateFoodPosition() {
 
 function handleGameOver() {
     clearInterval(setIntervalId);
-    alert("Game Over! Press OK to replay...");
+    alert("Game Over! Votre score est de "+score+" !");
     location.reload();
 }
 
 const playBoard = document.querySelector(".play-board");
 const scoreElement = document.querySelector(".score");
-const highScoreElement = document.querySelector(".high-score");
 
 function initGame() {
     if (gameOver) return handleGameOver();

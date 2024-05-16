@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (availability === chrome.cast.ReceiverAvailability.AVAILABLE) {
             document.getElementById('connectButton').style.display = 'block';
         } else {
-            document.getElementById('connectButton').style.display = 'none';
+            document.getElementById('connectButton').style.display = 'block';
         }
     }
 
