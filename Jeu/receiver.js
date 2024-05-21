@@ -1,11 +1,10 @@
-
-    console.log("Snake v10.0");
-    const context = cast.framework.CastReceiverContext.getInstance();
-    const CHANNEL = 'urn:x-cast:snakeGame';
-    const applicationID = 'B46033B3'
-    context.addCustomMessageListener(CHANNEL, handleMessageFromSender);
-    const options = new cast.framework.CastReceiverOptions();
-    context.start(options);
+console.log("Snake v20.0");
+const context = cast.framework.CastReceiverContext.getInstance();
+const CHANNEL = 'urn:x-cast:snakeGame';
+const applicationID = 'B46033B3';
+context.addCustomMessageListener(CHANNEL, handleMessageFromSender);
+const options = new cast.framework.CastReceiverOptions();
+context.start(options);
 
 let snakeX = 5, snakeY = 5;
 let vitesseX = 0, vitesseY = 0;
@@ -14,13 +13,19 @@ let foodX, foodY;
 let snakeBody = [];
 let score = 0;
 let setIntervalId;
+let gameStarted = false;
 
 function handleMessageFromSender(event) {
-    const direction = event.data.direction;
-    handleControllerInput(direction);
+    const data = event.data;
+    if (data.command === 'start') {
+        startGame();
+    } else if (data.direction) {
+        handleControllerInput(data.direction);
+    }
 }
 
 function handleControllerInput(direction) {
+    if (!gameStarted) return;
     if (direction === "up") {
         vitesseX = 0;
         vitesseY = -1;
@@ -36,24 +41,6 @@ function handleControllerInput(direction) {
     }
 }
 
-// document.addEventListener('keydown', (event) => {
-//     const key = event.key;
-//     handleKeyPress(key);
-// });
-
-// function handleKeyPress(key) {
-//     if (key === 'ArrowUp') {
-//         handleControllerInput('up');
-//     } else if (key === 'ArrowDown') {
-//         handleControllerInput('down');
-//     } else if (key === 'ArrowLeft') {
-//         handleControllerInput('left');
-//     } else if (key === 'ArrowRight') {
-//         handleControllerInput('right');
-//     }
-// }
-
-
 function updateFoodPosition() {
     foodX = Math.floor(Math.random() * 30) + 1;
     foodY = Math.floor(Math.random() * 30) + 1;
@@ -61,12 +48,20 @@ function updateFoodPosition() {
 
 function handleGameOver() {
     clearInterval(setIntervalId);
-    alert("Game Over! Votre score est de "+score+" !");
+    alert("Game Over! Votre score est de " + score + " !");
     location.reload();
 }
 
 const playBoard = document.querySelector(".play-board");
 const scoreElement = document.querySelector(".score");
+
+function startGame() {
+    document.querySelector(".wrapper").style.display = 'flex';
+    scoreElement.style.display = 'block';
+    gameStarted = true;
+    updateFoodPosition();
+    setIntervalId = setInterval(initGame, 120);
+}
 
 function initGame() {
     if (gameOver) return handleGameOver();
@@ -77,7 +72,6 @@ function initGame() {
         snakeBody.push([foodY, foodX]);
         score++;
         scoreElement.innerText = `Score: ${score}`;
-        highScoreElement.innerText = `High Score: ${score}`;
     }
 
     snakeX += vitesseX;
@@ -100,6 +94,3 @@ function initGame() {
     }
     playBoard.innerHTML = html;
 }
-
-updateFoodPosition();
-setIntervalId = setInterval(initGame, 120);

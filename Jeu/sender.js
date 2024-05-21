@@ -2,15 +2,11 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Version 10.0");
 
     let currentSession;
-    const CHANNEL = 'urn:x-cast:snakeGame'; 
+    const CHANNEL = 'urn:x-cast:snakeGame';
     const applicationID = '925F4741';
 
     document.getElementById('connectButton').addEventListener('click', () => {
         initializeApiOnly();
-    });
-
-    document.getElementById('playBtn').addEventListener('click', () => {
-        gameStarted = true; // Set gameStarted to true when play button is clicked
     });
 
     function onInitSuccess() {
@@ -59,13 +55,16 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    document.getElementById('playBtn').addEventListener('click', () => {
+        sendMessage(CHANNEL, { command: 'start' });
+    });
+
     function sendControllerInput(direction) {
         let message = { direction: direction };
-        let jsonMessage = JSON.stringify(message); 
-        sendMessage(CHANNEL, jsonMessage); 
+        sendMessage(CHANNEL, message);
     }
-
 });
+
 
    // function loadMedia(gameUrl) {
     //     const mediaInfo = new chrome.cast.media.MediaInfo(gameUrl);

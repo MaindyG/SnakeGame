@@ -1,96 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake 10.0</title>
+    <title>Snake 20.0</title>
     <link rel="stylesheet" type="text/css" href="jeu.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css"
-        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css" rel="stylesheet">
 </head>
 <style>
-    
-
-
-body {
-display: flex;
-align-items: center;
-justify-content: center;
-min-height: 100vh;
-background: rgb(45, 45, 45);
-}
-
-.wrapper {
-width: 65vmin;
-height: 80vmin;
-display: flex;
-overflow: hidden;
-flex-direction: column;
-justify-content: center;
-border-radius: 5px;
-background: #272726;
-box-shadow: 0 20px 40px rgba(0, 2, 10, 0.2);
-
-}
-.score {
-  background-color: #000000;
-  color: #ffe100;
-  font-weight: 500px;
-  font-size: 20px;
-  padding: 20px 27px;
-  text-align: center;
-  justify-content: space-between;
-  }
-
-.play-board {
-height: 100%;
-width: 100%;
-display: grid;
-background: #000000;
-grid-template: repeat(30, 1fr) / repeat(30, 1fr);
-}
-.play-board .food {
-background: red;
-}
-.play-board .head {
-background: #ffe203;
-}
-
-
-
-
-
-
-@media screen and (max-width: 1000px) {
-    .container {
-        max-width: 100%;
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: rgb(45, 45, 45);
     }
-}
-
+    .wrapper {
+        width: 65vmin;
+        height: 80vmin;
+        display: none; /* Hidden initially */
+        overflow: hidden;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 5px;
+        background: #272726;
+        box-shadow: 0 20px 40px rgba(0, 2, 10, 0.2);
+    }
+    .score {
+        background-color: #000000;
+        color: #ffe100;
+        font-weight: 500px;
+        font-size: 20px;
+        padding: 20px 27px;
+        text-align: center;
+        justify-content: space-between;
+        display: none; /* Hidden initially */
+    }
+    .play-board {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        background: #000000;
+        grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+    }
+    .play-board .food {
+        background: red;
+    }
+    .play-board .head {
+        background: #ffe203;
+    }
+    @media screen and (max-width: 1000px) {
+        .container {
+            max-width: 100%;
+        }
+    }
 </style>
-
-
 <body>
-  <div class="score">
-    Score: 0<br><br>
-  </div>    
-    <div class="wrapper" id="gameplay" >
-        
-        <div class="play-board"></div> 
-        
+    <div class="score">Score: 0<br><br></div>
+    <div class="wrapper" id="gameplay">
+        <div class="play-board"></div>
     </div><br>
-    
-
-       
-
-    
 </body>
-
 <script src="receiver.js" type="module"></script>
 <script type="text/javascript" src="https://www.gstatic.com/cast/sdk/libs/caf_receiver/v3/cast_receiver_framework.js"></script>
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">    
-
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </html>
