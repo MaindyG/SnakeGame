@@ -1,5 +1,5 @@
 
-    console.log("Snake v6.0");
+    console.log("Snake v8.0");
     const context = cast.framework.CastReceiverContext.getInstance();
     const CHANNEL = 'urn:x-cast:snakeGame';
     const applicationID = 'B46033B3'
@@ -35,21 +35,23 @@ function handleControllerInput(direction) {
         vitesseY = 0;
     }
 }
-document.addEventListener('keydown', (event) => {
-    const key = event.key;
-    handleKeyPress(key);
-});
-function handleKeyPress(key) {
-    if (key === 'ArrowUp') {
-        handleControllerInput('up');
-    } else if (key === 'ArrowDown') {
-        handleControllerInput('down');
-    } else if (key === 'ArrowLeft') {
-        handleControllerInput('left');
-    } else if (key === 'ArrowRight') {
-        handleControllerInput('right');
-    }
-}
+
+// document.addEventListener('keydown', (event) => {
+//     const key = event.key;
+//     handleKeyPress(key);
+// });
+
+// function handleKeyPress(key) {
+//     if (key === 'ArrowUp') {
+//         handleControllerInput('up');
+//     } else if (key === 'ArrowDown') {
+//         handleControllerInput('down');
+//     } else if (key === 'ArrowLeft') {
+//         handleControllerInput('left');
+//     } else if (key === 'ArrowRight') {
+//         handleControllerInput('right');
+//     }
+// }
 
 
 function updateFoodPosition() {
