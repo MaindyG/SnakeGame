@@ -4,20 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake</title>
+    <title>Snake 8.0</title>
     <link rel="stylesheet" type="text/css" href="jeu.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css"
         rel="stylesheet">
 </head>
 <style>
     
-body {
+/* body {
 display: flex;
 align-items: center;
 justify-content: center;
 background: rgb(45, 45, 45);
-}
-.wrapper {
+} */
+/* .wrapper {
 width: 65;
 height: 80;
 display: flex;
@@ -28,9 +28,9 @@ border-radius: 5px;
 background: #272726;
 box-shadow: 0 20px 40px rgba(0, 2, 10, 0.2);
 
-}
+} */
 
-.score {
+/* .score {
 background-color: #000000;
 color: #ffe100;
 font-weight: 500px;
@@ -38,8 +38,8 @@ font-size: 20px;
 padding: 20px 27px;
 text-align: center;
 justify-content: space-between;
-}
-.play-board {
+} */
+/* .play-board {
 height: 100%;
 width: 100%;
 display: grid;
@@ -52,7 +52,7 @@ background: red;
 .play-board .head {
 background: #ffe203;
 }
-
+ */
 
 
 
@@ -70,7 +70,7 @@ background: #ffe203;
   <div class="score">
     Score: 0<br><br>
   </div>    
-    <div class="wrapper" id="gameplay">
+    <div class="wrapper" id="gameplay" >
         
         <div class="play-board"></div> 
         
@@ -81,11 +81,7 @@ background: #ffe203;
 
     
 </body>
-<script>
-  $("document").ready( function () {
-      alert("Hello, world");
-  }); 
-</script>
+
 <script src="receiver.js" type="module"></script>
 <script type="text/javascript" src="https://www.gstatic.com/cast/sdk/libs/caf_receiver/v3/cast_receiver_framework.js"></script>
     <link rel="stylesheet"
