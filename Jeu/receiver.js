@@ -1,16 +1,15 @@
 
-console.log("Snake v7.0");
-const context = cast.framework.CastReceiverContext.getInstance();
-const CHANNEL = 'urn:x-cast:snakeGame';
-const applicationID = 'B46033B3'
-context.addCustomMessageListener(CHANNEL, handleMessageFromSender);
-const options = new cast.framework.CastReceiverOptions();
-context.start(options);
+    console.log("Snake v6.0");
+    const context = cast.framework.CastReceiverContext.getInstance();
+    const CHANNEL = 'urn:x-cast:snakeGame';
+    const applicationID = 'B46033B3'
+    context.addCustomMessageListener(CHANNEL, handleMessageFromSender);
+    const options = new cast.framework.CastReceiverOptions();
+    context.start(options);
 
 let snakeX = 5, snakeY = 5;
 let vitesseX = 0, vitesseY = 0;
 let gameOver = false;
-let gameStarted = false;
 let foodX, foodY;
 let snakeBody = [];
 let score = 0;
@@ -22,9 +21,6 @@ function handleMessageFromSender(event) {
 }
 
 function handleControllerInput(direction) {
-    if (!gameStarted) {
-        return;
-    } else {
     if (direction === "up") {
         vitesseX = 0;
         vitesseY = -1;
@@ -39,13 +35,10 @@ function handleControllerInput(direction) {
         vitesseY = 0;
     }
 }
-}
-
 document.addEventListener('keydown', (event) => {
     const key = event.key;
     handleKeyPress(key);
 });
-
 function handleKeyPress(key) {
     if (key === 'ArrowUp') {
         handleControllerInput('up');

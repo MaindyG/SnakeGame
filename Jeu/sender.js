@@ -12,9 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('playBtn').addEventListener('click', () => {
         if (currentSession) {
             loadMedia("https://transfertco.ca/SnakeGame/Jeu/receiver.html");
-            gameStarted = true; 
-            sendControllerInput('right');
-
         } else {
             alert('Connectez-vous sur Chromecast en premier');
         }
