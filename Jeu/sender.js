@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("Version 3.0");
+    console.log("Version 10.0");
 
     let currentSession;
     const CHANNEL = 'urn:x-cast:snakeGame'; 

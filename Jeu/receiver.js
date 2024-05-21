@@ -1,5 +1,5 @@
 
-    console.log("Snake v8.0");
+    console.log("Snake v10.0");
     const context = cast.framework.CastReceiverContext.getInstance();
     const CHANNEL = 'urn:x-cast:snakeGame';
     const applicationID = 'B46033B3'
