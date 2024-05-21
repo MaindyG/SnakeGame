@@ -58,6 +58,7 @@ const scoreElement = document.querySelector(".score");
 function startGame() {
     document.querySelector(".wrapper").style.display = 'flex';
     scoreElement.style.display = 'block';
+    document.getElementById("accueil").style.display = 'none';
     gameStarted = true;
     updateFoodPosition();
     setIntervalId = setInterval(initGame, 120);
