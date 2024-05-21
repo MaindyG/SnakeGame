@@ -14,11 +14,12 @@
         justify-content: center;
         min-height: 100vh;
         background: rgb(45, 45, 45);
+        position: relative;
     }
     .wrapper {
         width: 65vmin;
         height: 80vmin;
-        display: none; /* Hidden initially */
+        display: none; 
         overflow: hidden;
         flex-direction: column;
         justify-content: center;
@@ -34,7 +35,7 @@
         padding: 20px 27px;
         text-align: center;
         justify-content: space-between;
-        display: none; /* Hidden initially */
+        display: none;
     }
     .play-board {
         height: 100%;
@@ -49,17 +50,19 @@
     .play-board .head {
         background: #ffe203;
     }
-    .welcome-message {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: yellow;
-    font-size: 24px;
+    .accueil {
+      position: absolute;
+    
+    
+    color: #ffe100;
+    font-size: 40px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.instruction{
+  font-size: 25px;
 }
     @media screen and (max-width: 1000px) {
         .container {
@@ -69,8 +72,8 @@
 </style>
 <body>
   <div class="accueil" id="accueil">
-    Bienvenue à Snake <br><br> Press Start to begin <br><br><br>
-    <br> Fait par Fidel Maindy Goue et Chadi El Chami
+   <br> <br><br><br> <span class="instruction"> Cliquez sur Play/Start pour commencer </span> <br><br><br>
+   
   </div>
     <div class="score">Score: 0<br><br></div>
     <div class="wrapper" id="gameplay">
