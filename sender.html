@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChromeCast Controller 20.0</title>
+    <link rel="stylesheet" type="text/css" href="remote.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="display">
+            <div class="remote">
+                <div id="connectButton">
+                    <button> <span class="bi bi-power"></span> Power </button>
+                </div>
+                <br><br>
+                <div class="up">
+                    <button id="btn" class="controller-button" data-direction="up"><i
+                            class="bi bi-arrow-up-square-fill fa-3x"></i></button>
+                </div>
+                <div class="buttons_02 ">
+                    <div id="left">
+                        <button class="controller-button" data-direction="left"><i class="bi bi-arrow-left-square-fill fa-3x"></i> </button>
+                    </div>
+                    <div class="centered">
+                        <button id="playBtn" class="rewind-back-CSS"><i class="bi bi-play-circle-fill fa-3x">
+                            </i></button>
+                    </div>
+                    <div id="right">
+                        <button class="controller-button" data-direction="right"><i class="bi bi-arrow-right-square-fill fa-3x"></i></button>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <button class="controller-button" data-direction="down"><i
+                            class="bi bi-arrow-down-square-fill fa-3x"></i></button>
+                </div>
+                <br><br><br>
+                <div class="info">
+                    <button onclick="info()" class="CC-CSS"><i class="bi bi-dpad"></i> Commandes </button>
+                </div>
+                <script src="sender.js" type="module"></script>
+                <script type="text/javascript"
+                    src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
+                <link rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+            </div>
+        </div>
+    </div>
+    <script>
+        function info() {
+            alert(" Classic Snake Game \n Veuillez presser ▶️ ou bouger pour demarrer la partie \n\n ⬆️: Monter     ⬇️: Descendre     ⬅️: Gauche     ➡️: Droite     ");
+        }
+    </script>
+</body>
+
+</html>
