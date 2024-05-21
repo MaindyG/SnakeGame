@@ -10,11 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.getElementById('playBtn').addEventListener('click', () => {
-        if (currentSession) {
-            loadMedia("https://transfertco.ca/SnakeGame/Jeu/receiver.html");
-        } else {
-            alert('Connectez-vous sur Chromecast en premier');
-        }
+        gameStarted = true; // Set gameStarted to true when play button is clicked
     });
 
     function onInitSuccess() {
@@ -44,14 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    function loadMedia(gameUrl) {
-        const mediaInfo = new chrome.cast.media.MediaInfo(gameUrl);
-        const request = new chrome.cast.media.LoadRequest(mediaInfo);
-        currentSession.loadMedia(request, () => {
-            console.log('Receiver page loaded successfully');
-        }, onError);
-    }
-
     function sendMessage(namespace, message) {
         if (currentSession) {
             currentSession.sendMessage(namespace, message, () => {
@@ -78,3 +66,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+   // function loadMedia(gameUrl) {
+    //     const mediaInfo = new chrome.cast.media.MediaInfo(gameUrl);
+    //     const request = new chrome.cast.media.LoadRequest(mediaInfo);
+    //     currentSession.loadMedia(request, () => {
+    //         console.log('Receiver page loaded successfully');
+    //     }, onError);
+    // }
+   
+    // document.getElementById('playBtn').addEventListener('click', () => {
+    //     if (currentSession) {
+    //         loadMedia("https://transfertco.ca/SnakeGame/Jeu/receiver.html");
+    //         gameStarted = true; 
+    //         sendControllerInput('right');
+
+    //     } else {
+    //         alert('Connectez-vous sur Chromecast en premier');
+    //     }
+    // });
