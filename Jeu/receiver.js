@@ -14,14 +14,30 @@ let snakeBody = [];
 let score = 0;
 let setIntervalId;
 let gameStarted = false;
+let timerStart;
+let timerEnd;
+
+function startTimer() {
+    timerStart = Date.now();
+    console.log("Timer started");
+}
+
+function stopTimer() {
+    timerEnd = Date.now();
+    let timeElapsed = (timerEnd - timerStart) / 1000;
+    console.log(`Temps 1er point: ${timeElapsed} s`);
+}
 
 function handleMessageFromSender(event) {
     const data = event.data;
     if (data.command === 'start') {
         startGame();
+    } else if (message.command === 'startTimer') {
+        startTimer();
     } else if (data.direction) {
         handleControllerInput(data.direction);
     }
+
 }
 
 function handleControllerInput(direction) {
@@ -73,6 +89,9 @@ function initGame() {
         snakeBody.push([foodY, foodX]);
         score++;
         scoreElement.innerText = `Score: ${score}`;
+        if (score === 1 && timerStart) {
+            stopTimer();
+        }
     }
 
     snakeX += vitesseX;
