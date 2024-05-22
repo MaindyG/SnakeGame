@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function onInitSuccess() {
         console.log('Chromecast init success');
-        sendMessage(CHANNEL, { command: 'startTimer' });
     }
 
     function onError(error) {
