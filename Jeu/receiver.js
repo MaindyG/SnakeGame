@@ -93,7 +93,7 @@ function initGame() {
         snakeBody.push([foodY, foodX]);
         score++;
         scoreElement.innerText = `Score: ${score}`;
-        if (score === 1 && timerStart) {
+        if (score === 1) {
             stopTimer();
         }
     }
