@@ -15,19 +15,13 @@ let score = 0;
 let setIntervalId;
 let gameStarted = false;
 
-ç
-
 function handleMessageFromSender(event) {
     const data = event.data;
-    console.log("Message recu:", data);
-       if (data.command === 'start') {
+    if (data.command === 'start') {
         startGame();
-        console.time('Test : ');
     } else if (data.direction) {
         handleControllerInput(data.direction);
     }
-
-   
 }
 
 function handleControllerInput(direction) {
@@ -79,10 +73,6 @@ function initGame() {
         snakeBody.push([foodY, foodX]);
         score++;
         scoreElement.innerText = `Score: ${score}`;
-        if (score === 1) {
-            stopTimer();
-            console.timeEnd('Test : ');
-        }
     }
 
     snakeX += vitesseX;
