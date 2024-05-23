@@ -20,7 +20,7 @@
 > [!CAUTION]
 > Faites attention aux 4 murs autour. Une collision avec un de ces murs ou une collision avec vous meme peut entrainer une fin de jeu
 
-> [!ALERT]
+> ALERT : 
 > Je n'ai pas pu implémenter les timers pour les tests. J'ai utilisé un timer personnel pour cela
 
 
