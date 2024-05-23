@@ -10,7 +10,7 @@
 - [x] Cliquer sur le bouton "Power" 
 - [x] Cliquer sur le bouton "Play" (situé entre les touches directionnelles) pour afficher l'interface du jeu
 - [x] Cliquer sur un bouton d'une touche directionnelle pour commencer le jeu et aller dans direction
-- [ ] Cliquer sur le bouton "Commandes" pour se familiariser avec le jeu
+- [x] Cliquer sur le bouton "Commandes" pour se familiariser avec le jeu
 
 
 
